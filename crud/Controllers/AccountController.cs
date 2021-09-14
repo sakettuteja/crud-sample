@@ -99,11 +99,6 @@ namespace crud.Controllers
                     {
                         claims.Add(new Claim(ClaimTypes.Role, role));
                     }
-                    //{
-                    //    new Claim(ClaimTypes.Name, user.UserName),
-                    //    new Claim(ClaimTypes.Role, "Administrator")
-                    //};
-
                     var tokeOptions = new JwtSecurityToken(
                         issuer: "http://localhost:44373",
                         audience: "http://localhost:44373",
