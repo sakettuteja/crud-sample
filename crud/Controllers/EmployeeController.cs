@@ -22,7 +22,7 @@ namespace crud.Controllers
         }
 
         [Route("/employee")]
-        [HttpGet, Authorize(Roles = "Administrator")]
+        [HttpGet]//, Authorize(Roles = "Administrator")]
         public IActionResult GetAllEmployeeDetails()
         {
             try

@@ -63,7 +63,7 @@ namespace crud
                         ValidateLifetime = true,
                         ValidateIssuerSigningKey = true,
                         ValidIssuer = "http://localhost:44373",
-                        ValidAudience = "http://localhost:44373",
+                        ValidAudience = "http://localhost:4200",
                         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("superSecretKey@345"))
                     };
                 });

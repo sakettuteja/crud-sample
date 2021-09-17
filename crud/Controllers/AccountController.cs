@@ -52,13 +52,11 @@ namespace crud.Controllers
                     {
                         ErrorResponse errorResponse = new ErrorResponse() { ErrorCode = error.Code, ErrorDescription = error.Description };
                         errorResponseList.Add(errorResponse);
-
-                        //ModelState.TryAddModelError(error.Code, error.Description);
                     }                 
                     return BadRequest(errorResponseList);
                 }
-                await _userManager.AddToRoleAsync(user, "Administrator");
-                //await _userManager.AddToRoleAsync(user, "Visitor");
+                //await _userManager.AddToRoleAsync(user, "Administrator");
+                await _userManager.AddToRoleAsync(user, "Visitor");
                 return Ok(register);
             }
             catch (Exception ex)
@@ -101,7 +99,7 @@ namespace crud.Controllers
                     }
                     var tokeOptions = new JwtSecurityToken(
                         issuer: "http://localhost:44373",
-                        audience: "http://localhost:44373",
+                        audience: "http://localhost:4200",
                         claims: claims,
                         expires: DateTime.Now.AddMinutes(5),
                         signingCredentials: signinCredentials
