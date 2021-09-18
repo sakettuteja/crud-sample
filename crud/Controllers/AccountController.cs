@@ -72,7 +72,7 @@ namespace crud.Controllers
             }
         }
 
-        [HttpPost, Route("/login")]
+        [HttpPost, Route("/token")]
         public async Task<IActionResult> Login([FromBody]login user)
         {
             if (user == null)

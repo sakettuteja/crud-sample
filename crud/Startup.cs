@@ -7,6 +7,7 @@ using crud.Context;
 using crud.Model;
 using crud.Repository;
 using crud.Repository.Abstraction;
+using crud.Utility;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -67,7 +68,9 @@ namespace crud
                         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("superSecretKey@345"))
                     };
                 });
-        
+
+            services.AddControllers(options =>
+                options.InputFormatters.Add(new ByteArrayInputFormatter()));
 
             services.AddControllers();
         }
